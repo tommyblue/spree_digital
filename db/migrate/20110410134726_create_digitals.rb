@@ -1,11 +1,9 @@
 class CreateDigitals < ActiveRecord::Migration
-  
+
   def self.up
     create_table :digitals do |t|
       t.integer :variant_id
-      t.string :attachment_file_name
-      t.string :attachment_content_type
-      t.integer :attachment_file_size
+      t.integer :file_url
       t.timestamps
     end
     add_index :digitals, :variant_id
@@ -26,5 +24,5 @@ class CreateDigitals < ActiveRecord::Migration
     drop_table :digitals
     drop_table :digital_links
   end
-  
+
 end
