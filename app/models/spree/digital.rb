@@ -3,10 +3,6 @@ module Spree
     belongs_to :variant
     has_many :digital_links, :dependent => :destroy
 
-    #has_attached_file :attachment, :path => ":rails_root/private/digitals/:id/:basename.:extension"
-
-    # TODO: Limit the attachment to one single file. Paperclip supports many by default :/
-
     attr_accessible :variant_id, :attachment, :file_url
 
   end

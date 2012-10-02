@@ -3,7 +3,7 @@ class CreateDigitals < ActiveRecord::Migration
   def self.up
     create_table :digitals do |t|
       t.integer :variant_id
-      t.integer :file_url
+      t.string :file_url
       t.timestamps
     end
     add_index :digitals, :variant_id
