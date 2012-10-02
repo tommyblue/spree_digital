@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform     = Gem::Platform::RUBY
   s.name         = 'spree_digital'
-  s.version      = '1.1.1'
+  s.version      = '1.1.2'
   s.summary      = ''
   s.description  = 'Add digital download functionality to spree'
   s.author       = 'funkensturm.'
