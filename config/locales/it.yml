@@ -15,4 +15,5 @@ it:
     pdf: pdf eBook
   spree_digital:
     upload: Upload
+    save: Salva
 
