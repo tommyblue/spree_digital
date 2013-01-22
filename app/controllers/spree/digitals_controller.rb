@@ -9,7 +9,12 @@ module Spree
         attachment = link.digital
 
         if link.authorize!
-          redirect_to attachment.file_url and return
+          uri = URI.parse(attachment.file_url)
+          http = Net::HTTP.new(uri.host, uri.port)
+          request = Net::HTTP::Get.new(uri.request_uri)
+          request.basic_auth(ALFRESCO_USERNAME, ALFRESCO_PASSWORD)
+          response = http.request(request)
+          send_data response.body, filename: 'photos.zip', disposition: 'inline'
         end
       end
 
