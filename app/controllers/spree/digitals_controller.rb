@@ -15,10 +15,12 @@ module Spree
           request.basic_auth(ALFRESCO_USERNAME, ALFRESCO_PASSWORD)
           response = http.request(request)
           send_data response.body, filename: 'photos.zip', disposition: 'inline'
+        else
+          render :unauthorized
         end
+      else
+          render :unauthorized
       end
-
-      render :unauthorized
     end
 
   end
